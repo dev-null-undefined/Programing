@@ -109,6 +109,7 @@
     <Component class="java.awt.TextField" name="textYearFrom">
       <Properties>
         <Property name="text" type="java.lang.String" value="Year"/>
+        <Property name="selectionEnd" type="int" value="99"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="textDateFrom">

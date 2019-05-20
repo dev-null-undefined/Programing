@@ -33,7 +33,6 @@ public class Main {
     public static String fileFilter = "";
     public static Date dateFromFilter = null, dateToFilter = null;
     private static File[] f;
-    public static final String parameterDevider="\"";
 
     public static void main(String[] args) {
         try {
@@ -119,7 +118,7 @@ public class Main {
         try {
             LinkedList<String> returnList = new LinkedList<>();
             for (String s : lines) {
-                if (s.split(parameterDevider)[1].contains(fileName)) {
+                if (s.split("\"")[1].contains(fileName)) {
                     if (isFromTo(dateFrom, dateTo, getDateFromString(s))) {
                         returnList.add(s);
                     }
