@@ -45,6 +45,7 @@ public class FilterForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         textSearch.setText("Search");
+        textSearch.setSelectionEnd(textSearch.getText().length());
 
         buttonSubmit.setActionCommand("okButton");
         buttonSubmit.setLabel("OK");

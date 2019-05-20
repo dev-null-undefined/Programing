@@ -1,12 +1,11 @@
 
-import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -100,12 +99,28 @@ public class Main {
         lines = filter(lines, dateFromFilter, dateToFilter, fileFilter);
         consoleLinkedList(lines);
         console.append("Amount: " + lines.size() + System.lineSeparator());
-        HashSet<String> Ips = new HashSet<>();
+        HashMap<String,Integer> Ips = new HashMap<>();
         for (String line : lines) {
             String help = line.split(" - - ")[0];
+            if(Ips.containsKey(help)){
+                Ips.replace(help, Ips.get(help)+1);
+            }else{
+                Ips.put(help, new Integer(1));
+            }
         }
-        console.append("Unique ips count: " + Ips.size());
+        console.append("Unique ips count: " + Ips.size()+System.lineSeparator());
+        console.append("Ips with Count: " + System.lineSeparator());
+        console.append(hashMapToString(Ips));
+        console.append("Unique Ips List: "+System.lineSeparator());
+        console.append(Ips.keySet().stream().reduce((x,y)->String.format("%s,%s", x,y)).get()+System.lineSeparator());
 
+    }
+    public static String hashMapToString(HashMap<String,Integer> hashMap){
+        String returnString="";
+        for(Object key:hashMap.keySet()){
+            returnString+=key.toString()+"; Times: "+hashMap.get(key)+System.lineSeparator();
+        }
+        return returnString;
     }
 
     public static void consoleLinkedList(LinkedList<String> lines) {
