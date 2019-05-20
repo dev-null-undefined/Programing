@@ -34,28 +34,28 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="Day" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="textDateFrom" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Month" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="textMonthFrom" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Year" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="textYearFrom" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="Day1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="textDayTo" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Month1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="textMonthTo" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Year1" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="textYearTo" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="File" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="textSearch" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="button1" min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="buttonSubmit" min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelFrom" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -65,25 +65,25 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="label2" min="-2" max="-2" attributes="0"/>
+              <Component id="labelFrom" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Month" min="-2" max="-2" attributes="0"/>
-                  <Component id="Day" min="-2" max="-2" attributes="0"/>
-                  <Component id="Year" min="-2" max="-2" attributes="0"/>
+                  <Component id="textMonthFrom" min="-2" max="-2" attributes="0"/>
+                  <Component id="textDateFrom" min="-2" max="-2" attributes="0"/>
+                  <Component id="textYearFrom" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="label1" min="-2" max="-2" attributes="0"/>
+              <Component id="labelTo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Month1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="Day1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="Year1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="textMonthTo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="textDayTo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="textYearTo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="button1" pref="46" max="32767" attributes="0"/>
-                  <Component id="File" max="32767" attributes="0"/>
+                  <Component id="buttonSubmit" pref="46" max="32767" attributes="0"/>
+                  <Component id="textSearch" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -91,57 +91,57 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.TextField" name="File">
+    <Component class="java.awt.TextField" name="textSearch">
       <Properties>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="buttonSubmit">
       <Properties>
         <Property name="actionCommand" type="java.lang.String" value="okButton"/>
         <Property name="label" type="java.lang.String" value="OK"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button1MouseClicked"/>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="button1KeyPressed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonSubmitMouseClicked"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="buttonSubmitKeyPressed"/>
       </Events>
     </Component>
-    <Component class="java.awt.TextField" name="Year">
+    <Component class="java.awt.TextField" name="textYearFrom">
       <Properties>
         <Property name="text" type="java.lang.String" value="Year"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="Day">
+    <Component class="java.awt.TextField" name="textDateFrom">
       <Properties>
         <Property name="text" type="java.lang.String" value="Day"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="Month">
+    <Component class="java.awt.TextField" name="textMonthFrom">
       <Properties>
         <Property name="text" type="java.lang.String" value="Month"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="Day1">
+    <Component class="java.awt.TextField" name="textDayTo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Day"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="Month1">
+    <Component class="java.awt.TextField" name="textMonthTo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Month"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="Year1">
+    <Component class="java.awt.TextField" name="textYearTo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Year"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label1">
+    <Component class="java.awt.Label" name="labelTo">
       <Properties>
         <Property name="text" type="java.lang.String" value="To date"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label2">
+    <Component class="java.awt.Label" name="labelFrom">
       <Properties>
         <Property name="text" type="java.lang.String" value="From date"/>
       </Properties>

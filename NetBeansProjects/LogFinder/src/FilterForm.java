@@ -28,59 +28,51 @@ public class FilterForm extends javax.swing.JFrame {
     private void initComponents() {
 
         textField2 = new java.awt.TextField();
-        File = new java.awt.TextField();
-        button1 = new java.awt.Button();
-        Year = new java.awt.TextField();
-        Day = new java.awt.TextField();
-        Month = new java.awt.TextField();
-        Day1 = new java.awt.TextField();
-        Month1 = new java.awt.TextField();
-        Year1 = new java.awt.TextField();
-        label1 = new java.awt.Label();
-        label2 = new java.awt.Label();
+        textSearch = new java.awt.TextField();
+        buttonSubmit = new java.awt.Button();
+        textYearFrom = new java.awt.TextField();
+        textDateFrom = new java.awt.TextField();
+        textMonthFrom = new java.awt.TextField();
+        textDayTo = new java.awt.TextField();
+        textMonthTo = new java.awt.TextField();
+        textYearTo = new java.awt.TextField();
+        labelTo = new java.awt.Label();
+        labelFrom = new java.awt.Label();
 
         textField2.setText("textField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        File.setText("Search");
-        File.setSelectionEnd(9999);
+        textSearch.setText("Search");
 
-        button1.setActionCommand("okButton");
-        button1.setLabel("OK");
-        button1.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonSubmit.setActionCommand("okButton");
+        buttonSubmit.setLabel("OK");
+        buttonSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button1MouseClicked(evt);
+                buttonSubmitMouseClicked(evt);
             }
         });
-        button1.addKeyListener(new java.awt.event.KeyAdapter() {
+        buttonSubmit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                button1KeyPressed(evt);
+                buttonSubmitKeyPressed(evt);
             }
         });
 
-        Year.setText("Year");
-        Year.setSelectionEnd(999);
-        Year.setSelectionStart(-9);
+        textYearFrom.setText("Year");
 
-        Day.setText("Day");
-        Day.setSelectionEnd(9999);
+        textDateFrom.setText("Day");
 
-        Month.setText("Month");
-        Month.setSelectionEnd(999);
+        textMonthFrom.setText("Month");
 
-        Day1.setText("Day");
-        Day1.setSelectionEnd(9999);
+        textDayTo.setText("Day");
 
-        Month1.setText("Month");
-        Month1.setSelectionEnd(99999);
+        textMonthTo.setText("Month");
 
-        Year1.setText("Year");
-        Year1.setSelectionEnd(99999);
+        textYearTo.setText("Year");
 
-        label1.setText("To date");
+        labelTo.setText("To date");
 
-        label2.setText("From date");
+        labelFrom.setText("From date");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,85 +82,85 @@ public class FilterForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Day, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textDateFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textMonthFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textYearFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Day1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textDayTo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Month1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textMonthTo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Year1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(File, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textYearTo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(buttonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textMonthFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textDateFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textYearFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Month1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Day1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Year1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textMonthTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textDayTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textYearTo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(File, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(buttonSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(textSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseClicked
+    private void buttonSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSubmitMouseClicked
         // TODO add your handling code here:
         
-        Main.dateFromFilter=Main.toFormatedDate(Day.getText()+"."+Month.getText()+"."+Year.getText());
-        Main.dateToFilter=Main.toFormatedDate(Day1.getText()+"."+Month1.getText()+"."+Year1.getText());
-        Main.fileFilter=File.getText();
+        Main.dateFromFilter=Main.toFormatedDate(textDateFrom.getText()+"."+textMonthFrom.getText()+"."+textYearFrom.getText());
+        Main.dateToFilter=Main.toFormatedDate(textDayTo.getText()+"."+textMonthTo.getText()+"."+textYearTo.getText());
+        Main.fileFilter=textSearch.getText();
         Main.init();
         this.dispose();
         
-    }//GEN-LAST:event_button1MouseClicked
+    }//GEN-LAST:event_buttonSubmitMouseClicked
 
-    private void button1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_button1KeyPressed
+    private void buttonSubmitKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buttonSubmitKeyPressed
         // TODO add your handling code here:
-        Main.dateFromFilter=Main.toFormatedDate(Day.getText()+"."+Month.getText()+"."+Year.getText());
-        Main.dateToFilter=Main.toFormatedDate(Day1.getText()+"."+Month1.getText()+"."+Year1.getText());
-        Main.fileFilter=File.getText();
+        Main.dateFromFilter=Main.toFormatedDate(textDateFrom.getText()+"."+textMonthFrom.getText()+"."+textYearFrom.getText());
+        Main.dateToFilter=Main.toFormatedDate(textDayTo.getText()+"."+textMonthTo.getText()+"."+textYearTo.getText());
+        Main.fileFilter=textSearch.getText();
         Main.init();
         this.dispose();
-    }//GEN-LAST:event_button1KeyPressed
+    }//GEN-LAST:event_buttonSubmitKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.TextField Day;
-    private java.awt.TextField Day1;
-    private java.awt.TextField File;
-    private java.awt.TextField Month;
-    private java.awt.TextField Month1;
-    private java.awt.TextField Year;
-    private java.awt.TextField Year1;
-    private java.awt.Button button1;
-    private java.awt.Label label1;
-    private java.awt.Label label2;
+    private java.awt.Button buttonSubmit;
+    private java.awt.Label labelFrom;
+    private java.awt.Label labelTo;
+    private java.awt.TextField textDateFrom;
+    private java.awt.TextField textDayTo;
     private java.awt.TextField textField2;
+    private java.awt.TextField textMonthFrom;
+    private java.awt.TextField textMonthTo;
+    private java.awt.TextField textSearch;
+    private java.awt.TextField textYearFrom;
+    private java.awt.TextField textYearTo;
     // End of variables declaration//GEN-END:variables
 }
