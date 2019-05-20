@@ -67,7 +67,7 @@ class Particle {
       for (let wall of secWalls) {
         const pt = ray.cast(wall);
         if (pt) {
-          const d = p5.Vector.dist(this.pos, pt);
+          const d = p5.Vector.dist(this.pos, wall.minus.pos);
           if (d < record) {
             record = d;
             closest = pt;
