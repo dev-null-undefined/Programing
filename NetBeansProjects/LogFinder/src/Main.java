@@ -3,17 +3,11 @@ import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import static java.lang.System.console;
-import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -101,21 +95,22 @@ public class Main {
                 } while (continu);
 
             } catch (Exception e) {
+                console.append("!Some thing went wrong when reading file: " + fileInFiles.getAbsolutePath() + "; Exception: " + e.getMessage() + " !");
             }
         }
-        lines=filter(lines, dateFromFilter, dateToFilter, fileFilter);
+        lines = filter(lines, dateFromFilter, dateToFilter, fileFilter);
         consoleLinkedList(lines);
-        console.append("Amount: "+lines.size()+System.lineSeparator());
-        HashSet<String> Ips=new HashSet<>();
-        int count=0;
-        for(String line:lines){
-            String help=line.split(" - - ")[0];
-            if(Ips.add(help)==false){
+        console.append("Amount: " + lines.size() + System.lineSeparator());
+        HashSet<String> Ips = new HashSet<>();
+        int count = 0;
+        for (String line : lines) {
+            String help = line.split(" - - ")[0];
+            if (Ips.add(help) == false) {
                 count++;
             }
         }
-        console.append("Unique ips count: " +(lines.size()-count));
-        
+        console.append("Unique ips count: " + (lines.size() - count));
+
     }
 
     public static void consoleLinkedList(LinkedList<String> lines) {
@@ -125,16 +120,20 @@ public class Main {
     }
 
     public static LinkedList<String> filter(LinkedList<String> lines, Date dateFrom, Date dateTo, String fileName) {
-
-        LinkedList<String> returnList = new LinkedList<>();
-        for (String s : lines) {
-            if (s.contains(fileName)) {
-                if (isFromTo(dateFrom, dateTo, getDateFromString(s))) {
-                    returnList.add(s);
+        try {
+            LinkedList<String> returnList = new LinkedList<>();
+            for (String s : lines) {
+                if (s.split("\"")[1].contains(fileName)) {
+                    if (isFromTo(dateFrom, dateTo, getDateFromString(s))) {
+                        returnList.add(s);
+                    }
                 }
             }
+            return returnList;
+        } catch (Throwable e) {
+            console.append("!Some thing went wrong when filtering Exception:" + e.getMessage() + "!");
         }
-        return returnList;
+        return null;
     }
 
     public static boolean isFromTo(Date from, Date to, Date date) {
