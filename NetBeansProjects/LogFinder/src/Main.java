@@ -47,7 +47,7 @@ public class Main {
                 getFilters();
             }
         } catch (Throwable a) {
-            console.setText("Some thing went wrone: " + a.toString());
+            console.setText("Some thing went wronge (on line 50): " + a.toString());
             System.exit(0);
         }
     }
@@ -141,7 +141,7 @@ public class Main {
         try {
             return from.compareTo(date) * date.compareTo(to) >= 0;
         } catch (Throwable a) {
-            console.setText("Some thing went wrone: " + a.toString());
+            console.setText("Some thing went wronge (on line 144): " + a.toString());
         }
         return false;
     }
@@ -161,7 +161,7 @@ public class Main {
             }
             return date;
         } catch (Throwable a) {
-            console.setText("Some thing went wrone: " + a.toString());
+            console.setText("Some thing went wronge (on line 164): " + a.toString());
         }
         return null;
     }
