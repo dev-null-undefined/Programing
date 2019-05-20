@@ -15,7 +15,7 @@ public class FilterForm extends javax.swing.JFrame {
      */
     public FilterForm() {
         initComponents();
-        
+        this.setVisible(true);
     }
 
     /**

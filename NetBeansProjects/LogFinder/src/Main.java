@@ -54,10 +54,9 @@ public class Main {
 
     public static void getFilters() {
         FilterForm form = new FilterForm();
-        form.setVisible(true);
     }
 
-    public static String rayToString(LinkedList<File> lines) {
+    public static String arrayToString(LinkedList<File> lines) {
         String returnString = "";
         for (File f : lines) {
             returnString += f.getAbsolutePath() + System.lineSeparator();
@@ -78,7 +77,7 @@ public class Main {
                 files.push(file);
             }
         }
-        console.append("Loaded all of these files: " + System.lineSeparator() + Main.rayToString(files));
+        console.append("Loaded all of these files: " + System.lineSeparator() + Main.arrayToString(files));
         console.append(System.lineSeparator());
         LinkedList<String> lines = new LinkedList<>();
         for (File fileInFiles : files) {
@@ -102,14 +101,10 @@ public class Main {
         consoleLinkedList(lines);
         console.append("Amount: " + lines.size() + System.lineSeparator());
         HashSet<String> Ips = new HashSet<>();
-        int count = 0;
         for (String line : lines) {
             String help = line.split(" - - ")[0];
-            if (Ips.add(help) == false) {
-                count++;
-            }
         }
-        console.append("Unique ips count: " + (lines.size() - count));
+        console.append("Unique ips count: " + Ips.size());
 
     }
 
