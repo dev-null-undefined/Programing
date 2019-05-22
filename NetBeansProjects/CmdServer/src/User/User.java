@@ -18,8 +18,8 @@ import java.util.Scanner;
 public class User {
 
     public static void main(String[] args) {
-        String serverIp = "127.0.0.1";//192.168.0.170
-        int serverPort = 5454;
+        String serverIp = "jestrab.kolej.mff.cuni.cz";//192.168.0.170
+        int serverPort = 22;
 
         try (Socket socket = new Socket(serverIp, serverPort);
                 PrintWriter socketWriter = new PrintWriter(socket.getOutputStream(), true);
@@ -42,7 +42,7 @@ public class User {
             socketWriter.println(sb.toString());
 
             System.out.println("Waiting for aprove.");
-            reader.waitForAprove();
+           // reader.waitForAprove();
             reader.start();
             System.out.println("DONE");
 

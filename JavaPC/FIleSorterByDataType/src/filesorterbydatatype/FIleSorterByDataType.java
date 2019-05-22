@@ -313,6 +313,7 @@ public class FIleSorterByDataType {
                         } else {// if it is not in general
                             // console.append(newDir + "\\" + saveTo + "\\" + fileEndMatcher.group(0)+"\n");
                             final File newFolder = new File(newDir + "\\" + saveTo);
+                            cbnm
                             newFolder.mkdir(); // making new folder with name ass folder form our list
                             File k = new File(newDir + "\\" + saveTo + "\\" + fileEndMatcher.group(0));
                             if (k.canRead()) {
