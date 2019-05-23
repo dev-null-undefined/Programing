@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -48,22 +49,27 @@ public class User {
                 Statement state = (Statement) conector.createStatement();) {
             while (true) {
                 try {
+                    Random r= new Random();
                     System.out.print("Send: ");
-                    String input = User.getInput();
-                    System.out.println("Sending: " + input);
-                    state.execute(input);
-                    ResultSet rs = state.getResultSet();
-                    if (rs != null) {
-                        ResultSetMetaData rsmd = rs.getMetaData();
-                        List allRows = new ArrayList();
-                        while (rs.next()) {
-                            int numberColumns = rsmd.getColumnCount();
-                            System.out.print("Resoult:");
-                            for (int i = 1; i <= numberColumns; i++) {
-                                System.out.print(rs.getString(i).toString() + ",");
+                    //String input = User.getInput();
+                        String input="use test;";
+                    for (int x = 0; x < 1000000; x++) {
+                        System.out.println("Sending: " + input);
+                        state.execute(input);
+                        ResultSet rs = state.getResultSet();
+                        if (rs != null) {
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            List allRows = new ArrayList();
+                            while (rs.next()) {
+                                int numberColumns = rsmd.getColumnCount();
+                                System.out.print("Resoult:");
+                                for (int i = 1; i <= numberColumns; i++) {
+                                    System.out.print(rs.getString(i).toString() + ",");
+                                }
+                                System.out.println("");
                             }
-                            System.out.println("");
                         }
+                       input="INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES("+(r.nextInt(6)+1)+", NOW(), "+(r.nextInt(15000)+1)+");";
                     }
                 } catch (Throwable e) {
                     System.out.println("Error: " + e.getMessage());

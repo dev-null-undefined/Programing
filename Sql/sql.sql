@@ -73,7 +73,7 @@ from Zvire
 GROUP BY Zvire.Id;
 
 /*Seznam zvirat + pocet videni*/
-SELECT Zvire.Jmeno, COUNT(Viden.IdZvire), JSON_ARRAY(Osoba.Jmeno)
+SELECT Zvire.Jmeno, COUNT(Viden.IdZvire)
 from Zvire
   LEFT JOIN Viden ON Viden.IdZvire=Zvire.Id
   LEFT JOIN Osoba ON Osoba.Id=Viden.Osoba
@@ -85,3 +85,7 @@ ALTER TABLE tablename AUTO_INCREMENT = 1*/
 
 
 /*3306*/
+
+
+
+SELECT Zvire.Jmeno, Osoba.Jmeno, Viden.Cas from Zvire INNER JOIN Viden ON Viden.IdZvire=Zvire.Id INNER JOIN Osoba ON Osoba.Id=Viden.Osoba ORDER BY Zvire.Id;
