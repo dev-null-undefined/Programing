@@ -31,7 +31,7 @@ CREATE TABLE Viden(
 
 insert into Druh(Nazev)values("Domaci");
 insert into Druh(Nazev)values("Divoke");
-insert into Druh(Nazev)values("Vsezravec");
+insert into Druh(Nazev)values("Ochocene");
 /*Zvirata*/
 INSERT INTO Zvire(Nazev,Jmeno,Druh,Nohy,Potrava)VALUES('Kocka', 'Angie', 1, 3, 'Vsezravec');
 INSERT INTO Zvire(Nazev,Jmeno,Druh,Nohy,Potrava)VALUES('Kocka', 'Charlie', 2, 4, 'Masozravec');
