@@ -69,7 +69,7 @@ public class User {
                                 System.out.println("");
                             }
                         }
-                       input="INSERT INTO Zvire(Nazev,Jmeno,Druh,Nohy,Potrava)VALUES('Zvire:"+x+"', 'JMENO', "+(r.nextInt(3)+1)+", "+(r.nextInt(8)+1)+", 'Vsezravec');";
+                       input="insert into Telefony(Number,State) values("+(r.nextInt(888888888)+111111111)+","+r(.nextInt(300)+300)");";
                     }
                 } catch (Throwable e) {
                     System.out.println("Error: " + e.getMessage());
