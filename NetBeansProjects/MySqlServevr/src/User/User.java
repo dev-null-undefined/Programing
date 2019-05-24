@@ -69,7 +69,7 @@ public class User {
                                 System.out.println("");
                             }
                         }
-                       input="insert into Telefony(Number,State) values("+(r.nextInt(888888888)+111111111)+","+r(.nextInt(300)+300)");";
+                       input="insert into Telefony(Number,State) values("+(r.nextInt(888888888)+111111111)+","+(r.nextInt(300)+300)+");";
                     }
                 } catch (Throwable e) {
                     System.out.println("Error: " + e.getMessage());

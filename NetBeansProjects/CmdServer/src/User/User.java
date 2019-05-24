@@ -16,12 +16,16 @@ import java.util.Scanner;
  * @author Martin
  */
 public class User {
-
+    public static int port=5454;
+    public static String ip="127.0.0.1";
+    
     public static void main(String[] args) {
-        String serverIp = "jestrab.kolej.mff.cuni.cz";//192.168.0.170
-        int serverPort = 22;
-
-        try (Socket socket = new Socket(serverIp, serverPort);
+        IpForm form=new IpForm();
+        form.setVisible(true);
+    }
+    
+    public static void init(){
+        try (Socket socket = new Socket(User.ip, User.port);
                 PrintWriter socketWriter = new PrintWriter(socket.getOutputStream(), true);
                 MyReader reader = new MyReader(socket.getInputStream());
                 Scanner sc = new Scanner(System.in);) {

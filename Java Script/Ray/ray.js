@@ -54,3 +54,6 @@ class Ray {
     }
   }
 }
+
+//aaags
+console.log("AHoj");

@@ -18,9 +18,12 @@ import java.util.HashSet;
  * @author Martin
  */
 public class ServerMaker {
-
+    public static int port=5454;
     public static void main(String[] args) {
-        int port = 5454;
+        IpForm form=new IpForm();
+        form.setVisible(true);
+    }
+    public static void init(){
         ArrayList<Thread> servers = new ArrayList<>();
         try {
             ServerSocket socket = new ServerSocket(port);
