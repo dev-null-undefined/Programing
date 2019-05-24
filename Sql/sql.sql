@@ -48,7 +48,7 @@ ORDER BY Viden.Osoba;
 
 /*nidko nevidel*/
 SELECT *
-from Zvire
+from Zvire  
 WHERE NOT EXISTS(SELECT *
 from Viden
 where Viden.IdZvire=Zvire.Id);
