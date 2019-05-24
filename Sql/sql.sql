@@ -83,13 +83,7 @@ GROUP BY Zvire.Id;
 /*Reset AUTO_INCREMENT
 ALTER TABLE tablename AUTO_INCREMENT = 1*/
 
-
-/*3306*/
-
-
-
 SELECT Zvire.Jmeno, Osoba.Jmeno, Viden.Cas from Zvire INNER JOIN Viden ON Viden.IdZvire=Zvire.Id INNER JOIN Osoba ON Osoba.Id=Viden.Osoba ORDER BY Zvire.Id;
-
 
 /*MySql index 
 ALTER TABLE TABLE_NAME ADD INDEX (COLUMN_NAME);
@@ -97,4 +91,18 @@ ALTER TABLE TABLE_NAME ADD INDEX (COLUMN_NAME);
 ALTER TABLE Zvire ADD INDEX (Jmeno);
 */
 
-select * from Osoba LEFT join PhoneNumber on PhoneNumber.Id=Osoba.PhoneNumber;
+select Osoba.Jmeno,Concat("+",Telefony.State," ",Telefony.Number) as Telefon,Viden.Cas,Zvire.Nazev as Zviratko,Zvire.Jmeno as Jmeno,Druh.Nazev as Druh,Zvire.Nohy as "Pocet noh",Zvire.Potrava as Potrava
+from Viden
+INNER Join Osoba on Osoba.Id=Viden.Osoba
+INNER JOIN Zvire on Zvire.Id=Viden.IdZvire
+INNER Join Druh on Druh.Id=Zvire.Druh
+LEFT Join Telefony on Osoba.Telefon=Telefony.Id
+ORDER by Osoba.Jmeno;
+
+select *
+from Viden
+INNER Join Osoba on Osoba.Id=Viden.Osoba
+INNER JOIN Zvire on Zvire.Id=Viden.IdZvire
+INNER Join Druh on Druh.Id=Zvire.Druh
+LEFT Join Telefony on Osoba.Telefon=Telefony.Id
+ORDER by Osoba.Jmeno;
