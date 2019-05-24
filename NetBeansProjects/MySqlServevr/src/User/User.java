@@ -53,7 +53,7 @@ public class User {
                     System.out.print("Send: ");
                     //String input = User.getInput();
                         String input="use test;";
-                    for (int x = 0; x < 1000000; x++) {
+                    for (int x = 0; x < 200000; x++) {
                         System.out.println("Sending: " + input);
                         state.execute(input);
                         ResultSet rs = state.getResultSet();
@@ -69,7 +69,7 @@ public class User {
                                 System.out.println("");
                             }
                         }
-                       input="INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES("+(r.nextInt(6)+1)+", NOW(), "+(r.nextInt(15000)+1)+");";
+                       input="INSERT INTO Zvire(Nazev,Jmeno,Druh,Nohy,Potrava)VALUES('Zvire:"+x+"', 'JMENO', "+(r.nextInt(3)+1)+", "+(r.nextInt(8)+1)+", 'Vsezravec');";
                     }
                 } catch (Throwable e) {
                     System.out.println("Error: " + e.getMessage());

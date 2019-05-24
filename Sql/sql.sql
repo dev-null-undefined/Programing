@@ -89,3 +89,12 @@ ALTER TABLE tablename AUTO_INCREMENT = 1*/
 
 
 SELECT Zvire.Jmeno, Osoba.Jmeno, Viden.Cas from Zvire INNER JOIN Viden ON Viden.IdZvire=Zvire.Id INNER JOIN Osoba ON Osoba.Id=Viden.Osoba ORDER BY Zvire.Id;
+
+
+/*MySql index 
+ALTER TABLE TABLE_NAME ADD INDEX (COLUMN_NAME);
+
+ALTER TABLE Zvire ADD INDEX (Jmeno);
+*/
+
+select * from Osoba LEFT join PhoneNumber on PhoneNumber.Id=Osoba.PhoneNumber;
