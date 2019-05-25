@@ -9,11 +9,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import javafx.application.Application;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -46,7 +44,7 @@ public class Main extends Application {
         FilterForm form = new FilterForm();
     }
 
-    public static String arrayToString(LinkedList<File> lines) {
+    public static String arrayToString(List<File> lines) {
         String returnString = "";
         for (File f : lines) {
             returnString += f.getAbsolutePath() + System.lineSeparator();
@@ -56,7 +54,7 @@ public class Main extends Application {
 
     public static void initializate() {
         Main.makeOutPut();
-        LinkedList<File> files = new LinkedList<>();
+        /*LinkedList<File> files = new LinkedList<>();
         System.out.println(dateFromFilter + "," + dateToFilter + "," + fileFilter);
 
         for (File file : f) {
@@ -66,16 +64,15 @@ public class Main extends Application {
             if (file.isFile()) {
                 files.push(file);
             }
-        }
-        console.append("Loaded all of these files: " + System.lineSeparator() + Main.arrayToString(files));
+        }*/
+        console.append("Loaded all of these files: " + System.lineSeparator() + Main.arrayToString(f));
         console.append(System.lineSeparator());
         LinkedList<String> lines = new LinkedList<>();
-        for (File fileInFiles : files) {
+        for (File fileInFiles : f) {
             try (BufferedReader fr = new BufferedReader(new FileReader(fileInFiles))) {
-                String line = "";
                 boolean continu = true;
                 do {
-                    line = fr.readLine();
+                    String line = fr.readLine();
                     if (line != null) {
                         lines.push(line);
                     } else {
@@ -115,7 +112,7 @@ public class Main extends Application {
         return returnString;
     }
 
-    public static void consoleLinkedList(LinkedList<String> lines) {
+    public static void consoleLinkedList(List<String> lines) {
         for (String line : lines) {
             console.append(line + System.lineSeparator());
         }
@@ -221,6 +218,8 @@ public class Main extends Application {
         if (selectedFiles != null) {
             f=selectedFiles;
             getFilters();
+        }else{
+            System.exit(0);
         }
     }
 

@@ -9,12 +9,14 @@
     </fileobject>
     <fileobject name="commonpalette">
         <attr name="WinSys-TCRef-Order" stringvalue="CommonPalette"/>
+        <attr name="_palette_visible_FormDesignerPalette" boolvalue="true"/>
+        <attr name="_palette_visible__empty_" boolvalue="false"/>
     </fileobject>
     <fileobject name="editor">
-        <attr name="WinSys-TCRef-Order" stringvalue="Welcome/CoverageReportTopComponent/HQLEditorTopComponent/dbgInstances"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="CoverageReportTopComponent/HQLEditorTopComponent/dbgInstances"/>
     </fileobject>
     <fileobject name="explorer">
-        <attr name="WinSys-TCRef-Order" stringvalue="projectTabLogical_tc/projectTab_tc/favorites/DashboardTopComponent/services/debuggingView/profiler_cp"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="projectTabLogical_tc/projectTab_tc/services/favorites/DashboardTopComponent/debuggingView/profiler_cp"/>
     </fileobject>
     <fileobject name="leftSlidingSide">
         <attr name="WinSys-TCRef-Order" stringvalue=""/>
