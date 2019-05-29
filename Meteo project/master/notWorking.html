@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+      <title>Nefunkcni cidla</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    <div class="box">
+    <div class="logo">
+      <img src="logo.png" width="233px" height="66px" />
+    </div>
+    <div class="header">
+      <h1>AirTracker</h1>
+      <h2>Data received from sigfox</h2>
+    </div>
+    <div>
+    <form action="index.php" method="GET">
+      <span>Point ID:<span>
+      <input type="text" name="filterPoint" value="<?php echo $filterPoint; ?>" />
+      <input type="submit" value="Set filter" />
+    </form>
+    </div>
+    <div class="legend">
+      <span class="high">VOC value &gt; 300</span>, <span class="ok">VOC value &gt; 250</span>, <span class="low">VOC value &gt; 0 and &lt; 250</span>
+    </div>
+    <div class="datagrid" id="datagrid">
+      <table>
+          <tr>
+            <th>Date and time</th><th>Device ID</th><th>Point ID</th><th>Decoded message</th>
+          </tr>
