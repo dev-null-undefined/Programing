@@ -45,9 +45,7 @@ class Node {
       return this.val;
     }
   }
-  next(){
-    return {value:this.tail,done:this.done()};
-  }
+ 
   done(){
     if(tail==undefined){
       return true;
@@ -55,7 +53,18 @@ class Node {
     return false;
   }
   *[Symbol.iterator](){
-    
+    let val=this;
+    const iterator={
+      next(){
+        if (val.done()){
+          return {value:val,done:true};
+        }
+        let saveVal=val;
+        val=val.tail;
+        return {value:saveVal,done:false};
+      }
+    }
+    return iterator;
   }
 }
 
