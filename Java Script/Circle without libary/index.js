@@ -1,10 +1,19 @@
+let ctx;
+let c;
 function onLoad() {
-  var c = document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
+  c = document.getElementById("myCanvas");
+  ctx = c.getContext("2d");
   ctx.moveTo(0, 0);
   ctx.stroke();
-  for (let i = 0; i < 360; i++) {
-    ctx.fillRect(Math.sin(i) * 50+c.width/2, Math.cos(i) * 50+c.height/2, 1, 1);
+  for (let i = 0; i < 360 * 2; i++) {
+    drawPixel(
+      Math.sin(i / 2.0) * 50 + c.width / 2,
+      Math.cos(i / 2.0) * 50 + c.height / 2,
+      ctx
+    );
   }
+}
+function drawPixel(x, y, ctx) {
+  ctx.fillRect(x, y, 1, 1);
 }
 window.onload = onLoad;
