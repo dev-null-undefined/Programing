@@ -6,8 +6,8 @@ function onLoad() {
   ctx.moveTo(0, 0);
   for (let i = 0; i < 360 * 2; i++) {
     drawPixel(
-      Math.sin(i / 2.0) * 50 + c.width / 2,
-      Math.cos(i / 2.0) * 50 + c.height / 2,
+      Math.sin(degree(i / 2.0)) * 50 + c.width / 2,
+      Math.cos(degree(i / 2.0)) * 50 + c.height / 2,
       ctx
     );
   }
@@ -17,5 +17,8 @@ function onLoad() {
 }
 function drawPixel(x, y, ctx) {
   ctx.fillRect(x, y, 1, 1);
+}
+function degree(degrees) {
+  return (degrees * Math.PI) / 180;
 }
 window.onload = onLoad;
