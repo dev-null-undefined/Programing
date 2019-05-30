@@ -7,12 +7,17 @@ $filterPoint = '';
 if (isset($_GET['filterPoint'])) {
   $filterPoint = $_GET['filterPoint'];
 }
+$page=1;
+if(isset($_GET['page'])){
+  $page=(int) $_GET['page'];
+}
 ?>
 <html>
 <head>
   <title>Airtracker  - data log (Sigfox)</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="index.js"></script>
+  <script src="index.js" charset="utf-8"></script>
+  <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'/>
 </head>
 <body>
 <div class="box">
@@ -25,13 +30,33 @@ if (isset($_GET['filterPoint'])) {
 </div>
 <div>
 <form action="index.php" method="GET">
-  <span>Point ID:<span>
-  <input type="text" name="filterPoint" value="<?php echo $filterPoint; ?>" />
+<span>Point ID:<span>
+<input type="text" name="filterPoint" value="<?php echo $filterPoint; ?>" />
   <input type="submit" value="Set filter" />
 </form>
 </div>
 <div class="legend">
   <span class="high">VOC value &gt; 300</span>, <span class="ok">VOC value &gt; 250</span>, <span class="low">VOC value &gt; 0 and &lt; 250</span>
+</div>
+<div class="buttons">
+<?php 
+if($page!=1){
+  printf("<button onclick=backPage()>Back</button>");
+}else{
+  printf("<button onclick=backPage() disabled>Back</button>");
+}
+?>
+<?php
+$conn = pg_connect("host=backup.blackies.net dbname=ubt user=ubt password=ubt")
+or die ('Could not connect: '. pg_last_error());
+$res = pg_query("select * from master_log where date > CURRENT_DATE - INTERVAL '1 month' and point_id like '" . $filterPoint . "%' order by date desc limit " . (($page+1)*1000) . " offset " . ($page)*1000);
+if(pg_num_rows($res)>0){
+  printf("<button onclick=nextPage()>Next</button>");
+}else{
+  printf("<button onclick=nextPage() disabled>Next</button>");
+}
+pg_free_result($res);
+?>
 </div>
 <div class="datagrid" id="datagrid">
   <table>
@@ -39,10 +64,7 @@ if (isset($_GET['filterPoint'])) {
         <th>Date and time</th><th>Device ID</th><th>Point ID</th><th>Decoded message</th>
       </tr>
     <?php
-     $conn = pg_connect("host=backup.blackies.net dbname=ubt user=ubt password=ubt")
-       or die ('Could not connect: '. pg_last_error());
-
-       $res = pg_query("select * from master_log where date > CURRENT_DATE - INTERVAL '1 month' and point_id like '" . $filterPoint . "%' order by date desc");
+        $res = pg_query("select * from master_log where date > CURRENT_DATE - INTERVAL '1 month' and point_id like '" . $filterPoint . "%' order by date desc limit " . ($page*1000) . " offset " . ($page-1)*1000);
        while ($line = pg_fetch_row($res, null, PGSQL_ASSOC)) {;
       $voc = intval($line['voc']);
       if (intval($voc) == 11342 || intval($voc) == 0 || intval($voc) == 62744) {

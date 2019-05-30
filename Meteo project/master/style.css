@@ -24,8 +24,8 @@
 .datagrid table tr td.low, div.legend span.snrLow { font-weight: normal; background: #ffffff; color: #f1a22f; } 
 .datagrid table tr td.error, div.legend span.snrError { font-weight: normal; background: #ffffff; color: #ff0000; } 
 .datagrid table tr td.empty, div.legend span.snrEmpty { font-weight: normal; background: #ffffff; color: #000000; } 
-.datagrid tr.invis{display: none;}
-div.legend { margin: 0 auto; font-size: 0.6em; margin-bottom: 10px; width: 1160px; float: left; }
+div.buttons{float:right;}
+div.legend { margin: 0 auto; font-size: 0.6em; margin-bottom: 10px; width: 1000px; float: left; }
 div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
 div.image { float:left; clear: left;height: 100%; width: 420px; }
 div.datagrid { float: left; height: 100%; overflow: scroll; width: 1200px; }
@@ -35,4 +35,5 @@ body h2 { font-size: 22px; line-height: 10px; padding-top: 0px; margin-top: -10p
 div.logo { float: left; width: 233px; margin-right: 20px; }
 div.header { float: left; }
 div.box {  display: block;  width: 1180px; height: 100%; margin: 0 auto;}
+
 

@@ -12,6 +12,7 @@ if (isset($_GET['filterPoint'])) {
 <head>
   <title>Airtracker  - data log (Sigfox)</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
 </head>
 <body>
 <div class="box">
@@ -31,7 +32,7 @@ if (isset($_GET['filterPoint'])) {
 </div>
 <div class="legend">
   
-<span class="high">Last anwser older then 30 minutes</span>
+<span class="high">Poslední odpověď starší než 30 minut.</span>
   </div>
 <div class="datagrid" id="datagrid">
   <table>
@@ -47,7 +48,7 @@ if (isset($_GET['filterPoint'])) {
       if(strtotime($line['max']) < strtotime("-30 minutes")) {
         $class="high";
        }else{
-         $class="";
+         $class="low";
        }
         printf("<tr class=\"%s\"><td>%s</td><td>%s (Master %s)</td><td>%s</td></tr>\n",
          $class,date("d.m.Y H:i:s", strtotime($line['max'])),  $line['sigfox_id'], str_pad($line['sensor_id'], 2, "0", STR_PAD_LEFT), $line['point_id']);
