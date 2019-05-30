@@ -4,7 +4,7 @@ function onLoad() {
   c = document.getElementById("myCanvas");
   ctx = c.getContext("2d");
   ctx.moveTo(0, 0);
-  /*for (let i = 0; i < 360 * 2; i++) {
+  for (let i = 0; i < 360 * 2; i++) {
     drawPixel(
       Math.sin(degree(i / 2.0)) * 50 + c.width / 2,
       Math.cos(degree(i / 2.0)) * 50 + c.height / 2,
@@ -12,7 +12,7 @@ function onLoad() {
     );
   }
   ctx.beginPath();
-  ctx.arc(c.width / 2, c.height / 2, 55, 0, 2 * Math.PI);*/
+  ctx.arc(c.width / 2, c.height / 2, 55, 0, 2 * Math.PI);
   for (let i = 0; i < 360 * 2; i++) {
     drawPixel(
       (i / c.width) * 360,
