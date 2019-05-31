@@ -3,7 +3,7 @@ let c;
 function onLoad() {
   c = document.getElementById("myCanvas");
   ctx = c.getContext("2d");
-  ctx.moveTo(0, 0);
+  //ctx.moveTo(0, 0);
   for (let i = 0; i < 360 * 2; i++) {
     drawPixel(
       Math.sin(degree(i / 2.0)) * 50 + c.width / 2,
@@ -22,10 +22,14 @@ function onLoad() {
   }
   ctx.stroke();
 }
-function drawPixel(x, y, ctx) {
-  ctx.fillRect(x, y, 1, 1);
+function drawPixel(x, y, ctx, size = 1) {
+  ctx.fillRect(x, y, size, size);
 }
 function degree(degrees) {
   return (degrees * Math.PI) / 180;
 }
 window.onload = onLoad;
+
+document.addEventListener("click", function myOnClick(evt) {
+  drawPixel(evt.clientX, evt.clientY, ctx, 2);
+});
