@@ -4,4 +4,5 @@
     <module name="org.netbeans.spi.navigator/1" spec="1.0" />
     <tc-id id="navigatorTC" />
     <state opened="true" />
+    <docking-status maximized-mode="docked" />
 </tc-ref>

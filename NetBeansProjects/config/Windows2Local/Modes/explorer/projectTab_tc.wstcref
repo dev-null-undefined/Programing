@@ -4,4 +4,5 @@
     <module name="org.netbeans.modules.projectui" spec="1.0" />
     <tc-id id="projectTab_tc" />
     <state opened="true" />
+    <docking-status maximized-mode="docked" />
 </tc-ref>

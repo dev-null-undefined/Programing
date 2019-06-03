@@ -33,8 +33,8 @@
   </main-window>
     <editor-area state="joined" frame-state="0">
   <constraints>
-  <path orientation="horizontal" number="60" weight="0.7" />
-  <path orientation="vertical" number="40" weight="0.7" />
+  <path orientation="horizontal" number="60" weight="0.7617787188988883" />
+  <path orientation="vertical" number="40" weight="0.7707212055974165" />
   <path orientation="horizontal" number="40" weight="0.7" />
   <path orientation="vertical" number="40" weight="0.5" />
   </constraints>
@@ -42,15 +42,19 @@
     </editor-area>
     <screen width="1920" height="1080"/>
     <active-mode name="editor"/>
-    <maximized-mode editor="editor"/>
     <toolbar configuration="Standard" preferred-icon-size="24"/>
     <tc-list>
-  <tc-id id="MultiView-java#002Eso2D0988CFtext#002Ehistory#007C"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC3xt#002Ehistory#007C_3"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC4xt#002Ehistory#007C_4"/>
   <tc-id id="output"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC6xt#002Ehistory#007C_6"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC8xt#002Ehistory#007C_8"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC7xt#002Ehistory#007C_7"/>
   <tc-id id="projectTabLogical_tc"/>
-  <tc-id id="navigatorTC"/>
-  <tc-id id="Welcome"/>
+  <tc-id id="MultiView-java#002Eso10CA9CC9xt#002Ehistory#007C_9"/>
   <tc-id id="projectTab_tc"/>
   <tc-id id="services"/>
+  <tc-id id="navigatorTC"/>
+  <tc-id id="Welcome"/>
     </tc-list>
 </windowmanager>
