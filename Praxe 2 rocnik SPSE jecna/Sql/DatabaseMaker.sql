@@ -22,11 +22,11 @@ CREATE TABLE Telefony(
   primary key (`Id`)
 );
 CREATE TABLE Osoba(
-  `Id` INT not null primary key AUTO_INCREMENT,
+  `Id` INT not null AUTO_INCREMENT,
   `Telefon` int,
   `Jmeno` VARCHAR(20),
   primary KEY (`Id`),
-  key `Osoba_ibfk_3`,
+  key `Osoba_ibfk_3`(`Telefon`),
   CONSTRAINT `Osoba_ibfk_3` FOREIGN KEY (`Telefon`) REFERENCES `Telefony` (`Id`)
 );
 CREATE TABLE Viden(
@@ -61,11 +61,12 @@ insert into Telefony(Id,Number,State) values(3,602258332,420);
 /*Osoby*/
 INSERT INTO Osoba(Jmeno)VALUES("Misa");
 INSERT INTO Osoba(Jmeno)VALUES("Verca");
-INSERT INTO Osoba(Jmeno,PhoneNumber)VALUES("Martin",1);
-INSERT INTO Osoba(Jmeno,PhoneNumber)VALUES("Zuzka",2);
-INSERT INTO Osoba(Jmeno,PhoneNumber)VALUES("Petr",3);
+INSERT INTO Osoba(Jmeno,Telefon)VALUES("Martin",1);
+INSERT INTO Osoba(Jmeno,Telefon)VALUES("Zuzka",2);
+INSERT INTO Osoba(Jmeno,Telefon)VALUES("Petr",3);
 
 /*Viden*/
+/*Charlie a Angie*/
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(2, NOW(), 1);
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(1, NOW(), 1);
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(2, NOW(), 2);
@@ -74,9 +75,19 @@ INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(2, NOW(), 4);
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(1, NOW(), 4);
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(2, NOW(), 5);
 INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(1, NOW(), 5);
-INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(5, NOW(), 3);
-INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(3, NOW(), 3);
---
-INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(4, NOW(), 3);
---
-INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(6, NOW(), 4);
+
+/*Zbytek*/
+INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(6, NOW(), 3);/*Martin julie*/
+INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(5, NOW(), 5);/*Petr Opice*/
+INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(3, NOW(), 3);/*Martin Karel*/
+INSERT INTO Viden(IdZvire,Cas,Osoba)VALUES(4, NOW(), 2);/*Verca kone*/
+
+
+
+/*DROP TABLES
+drop table Viden;
+drop table Osoba;
+drop table Telefony;
+drop table Zvire;
+drop table Druh;
+*/
