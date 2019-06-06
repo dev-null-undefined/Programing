@@ -1,4 +1,5 @@
 "use strict";
+//Comments
 var mine = [];
 var drawArr = [];
 var saveDrawArr = [];
