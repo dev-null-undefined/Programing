@@ -66,12 +66,12 @@ pg_free_result($res);
     <?php
         $res = pg_query("select * from master_log where date > CURRENT_DATE - INTERVAL '1 month' and point_id like '" . $filterPoint . "%' order by date desc limit " . ($page*1000) . " offset " . ($page-1)*1000);
        while ($line = pg_fetch_row($res, null, PGSQL_ASSOC)) {;
-      $voc = intval($line['voc']);
-      if (intval($voc) == 11342 || intval($voc) == 0 || intval($voc) == 62744) {
+      $voc = floatval($line['voc']);
+      if ($voc == 11342 |$voc == 0 |$voc == 62744) {
         $class="";
-      } else if (intval($voc) > 300) {
+      } else if ($voc > 300) {
         $class="high";
-      } else if (intval($voc) > 250) {  
+      } else if ($voc > 250) {  
         $class="ok";
       } else {
        $class="low";
