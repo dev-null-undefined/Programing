@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;pokus1.pokus.fn(...)&apos; to &apos;toInt&apos;&#x0D;&#x0A;- Original project: &apos;pokus1-matematika&apos;&#x0D;&#x0A;- Original element: &apos;pokus1.pokus.fn(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;pokus1.pokus.toInt(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;fn&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;pokus1{pokus.java[pokus~fn~D" name="toInt" references="true" stamp="1507468167201" version="1.0"/>
+</session>

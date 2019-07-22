@@ -1,9 +1,3 @@
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/145-2d-ray-casting.html
-// https://youtu.be/TOEi6T2mtHo
-
-// 2D Ray Casting
-// https://editor.p5js.org/codingtrain/sketches/Nqsq3DFv-
 let players = [];
 let walls = [];
 let speed = 10;
@@ -18,7 +12,11 @@ let drawingWall;
 let clickVector;
 let control = false;
 let PlayerControl = true;
-function changePlayerControl(bool) {
+let light=true;
+function changeLighth(bool){
+  light=bool;  
+}
+function changePlayerControl(bool){
   PlayerControl = bool;
 }
 function generateRandomLines(count) {
@@ -83,16 +81,20 @@ function draw() {
     } else {
       particle.update(noise(xoff) * width, noise(yoff) * height);
     }
+    if(light){
     particle.show();
     particle.look(saveWalls, players);
+    }
   } else {
     if (control) {
       particle.update(mouseX, mouseY);
     } else {
       particle.update(noise(xoff) * width, noise(yoff) * height);
     }
-    particle.show();
-    particle.look(walls, players);
+    if(light){
+      particle.show();
+      particle.look(walls, players);
+      }
     for (let wall of walls) {
       wall.show();
     }

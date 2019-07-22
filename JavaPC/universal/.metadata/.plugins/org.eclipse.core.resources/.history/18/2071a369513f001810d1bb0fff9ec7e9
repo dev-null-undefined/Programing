@@ -1,0 +1,14 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		ListInteger a=new ListInteger();
+		a.add(1);
+		a.add(3);
+		a.add(4);
+		a.add(5665, 5);
+		System.out.print(a.size());
+
+	}
+
+}

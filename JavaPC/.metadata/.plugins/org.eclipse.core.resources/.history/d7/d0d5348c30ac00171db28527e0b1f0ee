@@ -1,0 +1,56 @@
+package pokus1;
+
+public class pokus {
+	
+	private static String toInt(double a) {
+        if (a % 1 == 0) {  
+	       return String.format("%d", (int)a);
+	    }
+        return String.valueOf(a);
+	}
+	private static String vypiszavorky (boolean c) {
+		if (c=true) {
+			System.out.println("(");
+		}
+	}
+	private static boolean test (double b) {
+		if (b<0) {
+		   return true;
+		  }
+		else {
+		   return false;	
+		}
+	}
+
+	public static void main(String[] args) {
+		double a,b,c,d,e;
+		String aString,bString,cString,dString,eString;
+		boolean q,w,r,t,y;
+		
+	    System.out.println ("Matematika DU");
+	    System.out.println ("-------------");
+	    System.out.println ("A+B/C*D");
+	    System.out.println ("-------");
+	    a=2;
+	    b=3;
+	    c=4;
+	    d=-5;
+	    e=a+b/c*d;
+	    System.out.println ("A=2;B=3;C=4;D=(-5)");
+	    System.out.println ("---------------");
+	    aString = toInt(a);
+	    bString = toInt(b);
+	    cString = toInt(c);
+	    dString = toInt(d);
+	    eString = toInt(e);
+	    q = test(a);
+	    w = test(b);
+	    r = test(c);
+	    t = test(d);
+	    y = test(e);
+	    
+	
+	    System.out.println (aString+"+"+bString+"/"+cString+"*"+dString+"="+eString);
+	}
+
+}

@@ -1,0 +1,27 @@
+
+public class asdsadsadsaas {
+	public Integer get(int index) {
+		Integer i=null;
+		if(index>0) {
+			i= {
+					Integer i=null;
+					if(index>0) {
+						i= {
+								Integer i=null;
+								if(index>0) {
+									i=dalsi.get(index-1);
+									return i;
+								}
+								return i;
+								
+						}
+						return i;
+					}
+					return i;
+			}
+			return i;
+		}
+		return i;
+	}
+
+}

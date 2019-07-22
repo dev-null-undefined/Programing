@@ -1,0 +1,15 @@
+package prvni;
+
+public class main {
+	private int a,b;
+	public main (int c,int d) {
+		a=c;
+		b=d;
+	}
+	public int GetVypisa () {
+		return a;
+	}
+	
+	
+
+}

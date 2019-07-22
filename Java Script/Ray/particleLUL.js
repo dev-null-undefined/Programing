@@ -10,8 +10,4 @@ class Particle{
             this.rays.push(new Ray(this.pos,radians(a)));
         }
     }
-
-
-
-
 }

@@ -1,0 +1,50 @@
+package pokus1;
+
+public class pokus {
+	
+	private static String toInt(double a) {
+        if (a % 1 == 0) {  
+	       return String.format("%d", (int)a);
+	    }
+        return String.valueOf(a);
+	}
+	private static String test (double b) {
+		if (b>=0) {
+		   return String="("+b+")";
+		  }
+		else {
+		   return String.valueOf(b);	
+		}
+	}
+
+	public static void main(String[] args) {
+		double a,b,c,d,e;
+		String aString,bString,cString,dString,eString;
+		
+	    System.out.println ("Matematika DU");
+	    System.out.println ("-------------");
+	    System.out.println ("A+B/C*D");
+	    System.out.println ("-------");
+	    a=2;
+	    b=3;
+	    c=4;
+	    d=-5;
+	    e=a+b/c*d;
+	    System.out.println ("A=2;B=3;C=4;D=5");
+	    System.out.println ("---------------");
+	    aString = toInt(a);
+	    bString = toInt(b);
+	    cString = toInt(c);
+	    dString = toInt(d);
+	    eString = toInt(e);
+	    aString = test(a);
+	    bString = test(b);
+	    bString = test(c);
+	    cString = test(d);
+	    eString = test(e);
+	    
+	
+	    System.out.println (aString+"+"+bString+"/"+cString+"*"+"("+dString+")"+"= "+eString);
+	}
+
+}

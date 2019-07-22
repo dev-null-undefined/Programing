@@ -1,0 +1,32 @@
+package pokus1;
+
+public class pokus {
+	
+	private static String fn(double a) {
+        if (a % 1 == 0) {  
+	       return String.format("%d", (int)a);
+	    }
+        return String.valueOf(a);
+	}
+
+	public static void main(String[] args) {
+		double a,b,c,d,e;
+		String aString;
+		
+	    System.out.println ("Matematika DU");
+	    System.out.println ("-------------");
+	    System.out.println ("A+B/C*D");
+	    System.out.println ("-------");
+	    a=2;
+	    b=3;
+	    c=4;
+	    d=-5;
+	    e=a+b/c*d;
+	    System.out.println ("A=2;B=3;C=4;D=5");
+	    System.out.println ("---------------");
+	    aString = fn(a);
+	
+	    System.out.println (aString+"+"+b+"/"+c+"*"+"("+d+")"+"= "+e);
+	}
+
+}

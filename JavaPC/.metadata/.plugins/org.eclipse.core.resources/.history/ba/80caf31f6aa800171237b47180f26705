@@ -1,0 +1,12 @@
+package druhy;
+
+public class maindva {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	main obdelnik1 = new main (1,2);
+    System.out.println(main.getVypisa);
+
+	}
+
+}

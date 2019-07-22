@@ -1,0 +1,51 @@
+
+public class ListInteger {
+	private Integer cislo;
+	private ListInteger dalsi;
+
+	public ListInteger() {
+	}
+
+	private ListInteger(int cislo) {
+		this.cislo = cislo;
+	}
+
+	public void add(int cislo) {
+		if (this.cislo != null) {
+			if (dalsi != null) {
+				dalsi.add(cislo);
+			} else {
+				dalsi = new ListInteger(cislo);
+			}
+		} else {
+			this.cislo = cislo;
+		}
+	}
+	@SuppressWarnings("unused")
+	private void add(ListInteger a) {
+		dalsi=a;
+	}
+
+	public Integer get(int index) {
+		Integer i = null;
+		if (index > 0) {
+			i = dalsi.get(index - 1);
+			return i;
+		}
+		return cislo;
+	}
+
+	public void add(int index, int cislo) {
+		if (index == 0) {
+			ListInteger pomoc=dalsi;
+			this.dalsi=new ListInteger(this.cislo);
+			this.dalsi.add(pomoc);
+			this.cislo=cislo;
+			return;
+		}else {
+			dalsi.add(index-1, cislo);
+		}
+
+	}
+
+}

@@ -39,7 +39,32 @@ class Player {
     }
     this.color = false;
   }
-  update(x, y, walls) {
+  moveBy(x,y){
+    if(x>1){
+      x--;
+    }
+    if(x<-1){
+      x++;
+    }
+    if(y>1){
+      y--;
+    }
+    if(y<-1){
+      y++;
+    }
+    if(x<=1&&x>=-1){
+      x=0;
+    }
+    if(y<=1&&y>=-1){
+      y=0;
+    }
+    this.x+=x;
+    this.y+=y;
+    this.pos=createVector(this.x, this.y);
+  } 
+   update(x, y, walls) {
+    let closest;
+    let closestDist;
     for (let wall of walls) {
       const x1 = x;
       const y1 = y;
@@ -57,12 +82,30 @@ class Player {
         const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
         const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / den;
         if (t > 0 && t < 1 && u > 0 && u < 1) {
-          return;
+          const pt = createVector();
+          pt.x = x1 + t * (x2 - x1);
+          pt.y = y1 + t * (y2 - y1);
+          if(closest){
+            if(closestDist==p5.Vector.dist(this.pos,pt)){
+             return; 
+            }
+            if(closestDist>p5.Vector.dist(this.pos,pt)){
+              closest=pt;
+              closestDist=p5.Vector.dist(this.pos,pt);
+            }
+          }else{
+            closest=pt;
+            closestDist=p5.Vector.dist(this.pos,pt);
+          }
         }
       }
     }
+    if(closest){
+      this.moveBy(closest.x-this.x,closest.y-this.y);
+    }else{
     this.x = x;
     this.y = y;
     this.pos = createVector(x, y);
+    }
   }
 }

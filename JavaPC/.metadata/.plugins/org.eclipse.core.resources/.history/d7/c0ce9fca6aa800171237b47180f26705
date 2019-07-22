@@ -1,0 +1,12 @@
+package dva;
+
+public class maindva {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    prvni.main jedna = new prvni.main (1,2) {};
+    
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package pokus1;
+
+public class pokus {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    System.out.println ("Matematika DU");
+    System.out.println ("-------------");
+    double a,b,c,d,e;
+    System.out.println ("A+B/C*D");
+    System.out.println ("-------");
+    a=2;
+    b=3;
+    c=4;
+    d=-5;
+    e=a+b/c*d;
+    System.out.println ("A=2;B=3;C=4;D=5");
+    System.out.println ("---------------");
+    System.out.println(String.format("% d% n", a));
+    System.out.println (a+"+"+b+"/"+c+"*"+"("+d+")"+"= "+e);
+	}
+
+}

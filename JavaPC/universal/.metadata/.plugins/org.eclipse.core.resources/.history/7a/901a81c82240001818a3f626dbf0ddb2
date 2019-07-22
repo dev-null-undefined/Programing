@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ListInteger a=new ListInteger();
+	    a.add(1);
+		a.add(3);
+		a.add(4);
+		System.out.print(a.hledej(1));
+		ArrayList<String> aa=new ArrayList<>();	
+		}
+
+}
