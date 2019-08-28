@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Maze {
+    // nerd hates my english I should learn properly english and he probably hates me as  well
     private int[][] grid;
 
     public Maze(int Size) {
